@@ -18,7 +18,7 @@ public class patten_9 {
             }
             System.out.println ();
         }
-        for (int i = row-1 ; i >=0 ; i--) {
+        for (int i = row-2 ; i >=0 ; i--) {
             //* For space
             for (int j = 0; j < (row-1-i); j++) {
                 System.out.print ("  ");
