@@ -6,7 +6,7 @@ public class Arry_class{
     public static void main(String[] args) {
         int[] numbers={5,3,2,1,4,5,8,7,-1,-2};
          Arrays.sort(numbers);
-     Arryy_2.printArray(numbers);
+     Array_basic_2.printArray(numbers);
       System.out.println(" ");
 //         numbers= new int[]{2, 5, 6, 4, 1, 8, 9, 1, 2, 5};
 //         Arrays.sort(numbers,3,6);
