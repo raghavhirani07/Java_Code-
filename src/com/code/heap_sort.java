@@ -1,7 +1,5 @@
 package com.code;
-
 import java.util.Arrays;
-
 public class heap_sort {
    public static void hepify(int[] a , int n , int i){
         int largest = i ;
