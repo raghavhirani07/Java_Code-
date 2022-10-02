@@ -6,7 +6,7 @@ public class Knapsack_Dynamic_Programming {
         int[] weight = {1,2,5,6,7};
         int[] value = {1,6,18,22,28};
         int ans = knapsack_dp (n,w, weight, value);
-        System.out.println (ans);
+        System.out.println ("Max value " +ans);
     }
     private static int knapsack_dp(int n ,int w, int[] weight, int[] value) {
         int[][] a=new int[n+1][w+1];
