@@ -22,12 +22,12 @@ public class Making_change_Dynamic_programming {
                 }
             }
         }
-        for (int i = 0; i <=value.length; i++) {
+       /* for (int i = 0; i <=value.length; i++) {
             for (int j = 0; j <=C; j++) {
                 System.out.print (arr[i][j]+ "    ");
             }
             System.out.println ();
-        }
+        }*/
         return arr[value.length][C];
     }
 }
