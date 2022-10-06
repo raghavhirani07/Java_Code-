@@ -2,6 +2,8 @@ package com.code;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Set;
 
 public class krushkal_algorithm {
     public static void main(String[] args) {
@@ -21,10 +23,22 @@ public class krushkal_algorithm {
             }
         }
         Arrays.sort (arr, (int[] o1 , int[] o2) -> o2[2] - o1[2]);
-        for (int i = 0; i < count ; i++) {
+      /*  for (int i = 0; i < count ; i++) {
             System.out.print ("Edge {"+ (char)arr[i][0]+","+(char)arr[i][1]+"} = w { "+ arr[i][2]+" }");
             System.out.println ();
-        }
+        }*/
         // Sorting array to it's weight
+        Set<Character> s = new HashSet<> ();
+        s.add((char)arr[0][0]);
+        s.add((char)arr[0][1]);
+        System.out.println ("Edge {"+ (char)arr[0][0]+","+(char)arr[0][1]+"} = w { "+ arr[0][2]+" }");
+        for (int i = 1; i <count ; i++) {
+            int temp = s.size ();
+            s.add((char)arr[i][0]);
+            s.add ((char)arr[i][1]);
+            if(s.size () != temp){
+                System.out.println ("Edge {"+ (char)arr[i][0]+","+(char)arr[i][1]+"} = w { "+ arr[i][2]+" }");
+            }
+        }
     }
 }
