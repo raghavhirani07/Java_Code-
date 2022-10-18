@@ -1,6 +1,6 @@
 package com.code;
 
-public class pattern_3 {
+public class patten_3 {
     //? Inverted half pyramid With Numbers
     public static void pyramid_with_numbers(int col,int row){
         for (int i = 0; i < row ; i++) {
