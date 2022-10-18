@@ -1,5 +1,5 @@
 package com.code;
-
+//?   Hollw rectangle
 public class patten_0 {
     public  static  void  hollow_rectangle(int col,int row){
         for (int i = 0; i < row ; i++) {
