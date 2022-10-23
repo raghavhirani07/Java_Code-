@@ -1,5 +1,5 @@
 package com.code;
-
+//? This is abtract class
 
  abstract class Vegatable{
     String colour;
