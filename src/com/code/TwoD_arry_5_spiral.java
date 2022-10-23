@@ -1,0 +1,23 @@
+package com.code;
+
+public class TwoD_arry_5_spiral {
+    public static void main(String[] args) {
+    int[][] arr = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+    printspiral(arr);
+    }
+
+    public static void printspiral(int[][] arr) {
+        int starrow=0;
+        int starcol=0;
+        int endrow=arr.length-1;
+        int endcol=arr.length-1;
+        while( starcol <= endcol  || starrow <= endrow){
+            // Top
+            for (int i = starcol; i <= endcol ; i++) {
+                System.out.print (arr[starrow][i]);
+
+            }
+        }
+    }
+
+}
