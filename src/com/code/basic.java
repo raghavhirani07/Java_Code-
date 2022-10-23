@@ -2,7 +2,7 @@ package com.code;
 
 import java.util.Arrays;
 import java.util.Scanner;
-
+//? This is basic information abput varialble and their mathod
 public class basic {
     public static void main(String[] args) {
         String arg1 = args[0];  // in configuration type hello then show here
