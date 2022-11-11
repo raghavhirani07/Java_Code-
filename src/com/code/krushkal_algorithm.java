@@ -1,44 +1,40 @@
 package com.code;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class krushkal_algorithm {
-    public static void main(String[] args) {
-        int[][] graph_weight = {{0,7,8,5,0},{7,0,0,10,6},{8,0,0,9,0},{5,10,9,3,15},{0,6,0,15,0}};
-        char[] vertex = {'A','B','C','D','E'};
-        int l = 20 ;
-        int[][] arr = new  int[l][3];
-         int count = 0;
-        for (int i = 0; i < graph_weight.length ; i++) {
-            for (int j = i + 1; j < graph_weight.length; j++) {
-                if (graph_weight[i][j] != 0) {
-                    arr[count][0] = (int) vertex[i];
-                    arr[count][1] = (int) vertex[j];
-                    arr[count][2] = graph_weight[i][j];
-                    count++;
+    public static boolean iscycle(char a,char b , Set<Character> s ){
+        int len = s.size ();
+        s.add (a);
+        s.add (b);
+        return len == s.size ();
+    }
+    public static void insert_edge(ArrayList<graph> g , char[] vertex, int[][] graph_weight){
+        for (int i = 0; i < vertex.length ; i++) {
+            for (int j = i+1; j < vertex.length ; j++) {
+                if(graph_weight[i][j] > 0 ) {
+                    g.add (new graph (vertex[i], vertex[j], graph_weight[i][j]));
                 }
             }
         }
-        Arrays.sort (arr, (int[] o1 , int[] o2) -> o2[2] - o1[2]);
-      /*  for (int i = 0; i < count ; i++) {
-            System.out.print ("Edge {"+ (char)arr[i][0]+","+(char)arr[i][1]+"} = w { "+ arr[i][2]+" }");
-            System.out.println ();
-        }*/
-        // Sorting array to it's weight
-        Set<Character> s = new HashSet<> ();
-        s.add((char)arr[0][0]);
-        s.add((char)arr[0][1]);
-        System.out.println ("Edge {"+ (char)arr[0][0]+","+(char)arr[0][1]+"} = w { "+ arr[0][2]+" }");
-        for (int i = 1; i <count ; i++) {
-            int temp = s.size ();
-            s.add((char)arr[i][0]);
-            s.add ((char)arr[i][1]);
-            if(s.size () != temp){
-                System.out.println ("Edge {"+ (char)arr[i][0]+","+(char)arr[i][1]+"} = w { "+ arr[i][2]+" }");
+        g.sort (Comparator.comparingInt (o->o.wight));
+    }
+    public static void main(String[] args) {
+        int[][] graph_weight = {{0,7,8,5,0},{7,0,0,10,6},{8,0,0,9,0},{5,10,9,3,15},{0,6,0,15,0}};
+        char[] vertex = {'A','B','C','D','E'};
+        Set<Character> select = new HashSet<> ();
+        ArrayList<graph> g = new ArrayList<> ();
+
+        //* Enter all Edge with both Vertex with sorting order
+        insert_edge (g,vertex,graph_weight);
+
+        Iterator<graph> i = g.iterator ();
+        while(i.hasNext ()){
+            graph item =i.next ();
+            if(!iscycle (item.e1, item.e2, select)) {
+                System.out.println (item.e1 + "--> " + item.e2 + " == " + item.wight);
             }
+
         }
     }
 }
