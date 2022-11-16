@@ -4,25 +4,29 @@ import java.util.*;
 public class Prims_Algorithm {
 
     public static void connect_edge(int n ,ArrayList<graph> arr,int[][] g,char[] v){
-        for (int i = n+1; i < 5 ; i++) {
+        for (int i = 0; i < 5 ; i++) {
             if(g[n][i] > 0){
                 arr.add (new graph (v[n],v[i],g[n][i]));
             }
         }
         arr.sort (Comparator.comparingInt (o -> o.wight));
     }
-    public static boolean  iscreatecycle( Set<Character> s , char a){
+    public static boolean  iscreatecycle( Set<Character> s , char a,char b){
         int len  = s.size ();
         s.add (a);
+        s.add(b);
         return (len == s.size ());
     }
     public static char selectEdge(ArrayList<graph> arr , Set<Character> s , char a ) {
         char n =a;
         for (int j = 0; j < arr.size (); j++) {
-            if (!iscreatecycle (s, arr.get (j).e2)) {
+            if (!iscreatecycle (s, arr.get (j).e2,arr.get (j).e1)) {
                 System.out.println (arr.get (j).e1 + "--> " + arr.get (j).e2);
                 n = arr.get (j).e2;
                 s.add (n);
+                arr.remove (j);
+            }
+            else{
                 arr.remove (j);
             }
         }
