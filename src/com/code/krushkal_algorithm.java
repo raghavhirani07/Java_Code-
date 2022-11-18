@@ -20,6 +20,8 @@ public class krushkal_algorithm {
         g.sort (Comparator.comparingInt (o->o.wight));
     }
     public static void main(String[] args) {
+        System.out.println ("Enrollment no. = 200130107068");
+        System.out.println ("Name = Hirani Raghav");
         int[][] graph_weight = {{0,7,8,5,0},{7,0,0,10,6},{8,0,0,9,0},{5,10,9,3,15},{0,6,0,15,0}};
         char[] vertex = {'A','B','C','D','E'};
         Set<Character> select = new HashSet<> ();

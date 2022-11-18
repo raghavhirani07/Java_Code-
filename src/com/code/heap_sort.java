@@ -33,6 +33,8 @@ public class heap_sort {
         }
     }
     public static void main(String[] args) {
+        System.out.println ("Enrollment no. = 200130107068");
+        System.out.println ("Name = Hirani Raghav");
         int[] a  = {5, 6, 45, 18, 20, 93, 7};
         System.out.println ("Original Array " + Arrays.toString (a));
         bulidheap (a,a.length-1);

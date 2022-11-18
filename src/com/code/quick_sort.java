@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class quick_sort {
     public static void main(String[] args) {
+        System.out.println ("Enrollment no. = 200130107068");
+        System.out.println ("Name = Hirani Raghav");
         Scanner input = new Scanner (System.in);
         System.out.print ("Enter the length of array : ");
         int length = input.nextInt ();
@@ -13,6 +15,7 @@ public class quick_sort {
             array[i] = input.nextInt ();
         }
         quick (array, 0, length -1 );
+        System.out.println (Arrays.toString (array));
     }
 
     public static void quick(int[] array, int low, int high) {

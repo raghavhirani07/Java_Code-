@@ -1,11 +1,18 @@
 package com.code;
+
+import java.util.Arrays;
+
 public class Knapsack_Dynamic_Programming {
     public static void main(String[] args) {
+        System.out.println ("Enrollment no. = 200130107068");
+        System.out.println ("Name = Hirani Raghav");
         int w = 11;
         int n=5;
         int[] weight = {1,2,5,6,7};
         int[] value = {1,6,18,22,28};
         int ans = knapsack_dp (n,w, weight, value);
+        System.out.println ("Weight  : "+ Arrays.toString (weight));
+        System.out.println ("Value   : "+ Arrays.toString (value));
         System.out.println ("Max value " +ans);
     }
     private static int knapsack_dp(int n ,int w, int[] weight, int[] value) {

@@ -1,9 +1,14 @@
 package com.code;
 
+import java.util.Arrays;
+
 public class Making_change_Dynamic_programming {
     public static void main(String[] args) {
+        System.out.println ("Enrollment no. = 200130107068");
+        System.out.println ("Name = Hirani Raghav");
         int[] value={1,4,6};
         int C = 8;
+        System.out.println ("Available Coin set : "+ Arrays.toString (value));
         System.out.println ("The coin is needed to make "+ C + " money is "+
                 making_change( value, C ));
     }
@@ -22,12 +27,6 @@ public class Making_change_Dynamic_programming {
                 }
             }
         }
-       /* for (int i = 0; i <=value.length; i++) {
-            for (int j = 0; j <=C; j++) {
-                System.out.print (arr[i][j]+ "    ");
-            }
-            System.out.println ();
-        }*/
         return arr[value.length][C];
     }
 }

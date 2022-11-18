@@ -17,6 +17,8 @@ public class bubble_sort {
         return array;
     }
     public static void main(String[] args) {
+        System.out.println ("Enrollment no. = 200130107068");
+        System.out.println ("Name = Hirani Raghav");
         Scanner input =new Scanner (System.in);
         System.out.print("Enter the length of array : ");
         int length = input.nextInt ();
