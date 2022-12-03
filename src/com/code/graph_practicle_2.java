@@ -10,16 +10,13 @@ import java.util.Set;
 public class graph_practicle_2 {
 
     public static void main(String[] args) {
-        System.out.println ("Enrollment no. = 200130107068");
-        System.out.println ("Name = Hirani Raghav");
+     
         Set<Integer> s = new HashSet<> (Arrays.asList (0,1,2,3,4,5,6));
         int total_vertex=s.size ();
         ArrayList<graph>[] edge =new ArrayList[total_vertex];
-        for (int i = 0; i <total_vertex ; i++) {
-            edge[i]=new ArrayList<> ();
-        }
+
         //* Graph making using graph class
-        graph.create_graph (edge);
+        graph.create_graph (edge,total_vertex);
         dfs (edge,0,new boolean[total_vertex]);
     }
 

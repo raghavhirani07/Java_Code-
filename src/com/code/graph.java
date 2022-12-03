@@ -16,7 +16,10 @@ public class graph {
         this.des=des;
         this.wight=wight;
     }
-    public  static  void  create_graph(ArrayList<graph>[] edge){
+    public  static  void  create_graph(ArrayList<graph>[] edge,int total_vertex){
+        for (int i = 0; i <total_vertex ; i++) {
+            edge[i]=new ArrayList<> ();
+        }
         edge[0].add (new graph (0,1,1));
         edge[0].add (new graph (0,2,1));
 
