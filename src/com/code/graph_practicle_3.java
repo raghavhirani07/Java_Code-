@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import static com.code.graph_practicle_1.bfs;
 
 public class graph_practicle_3 {
     public static void haspath(graph g , int src ,int des, Set<Integer> visited ){
@@ -16,7 +17,7 @@ public class graph_practicle_3 {
         int total_vertex=s.size ();
         ArrayList<graph>[] g=new ArrayList[total_vertex];
         graph.create_graph (g,total_vertex);
-        graph_practicle_1.bfs (g,total_vertex);
+        bfs (g,total_vertex);
 
     }
 }
