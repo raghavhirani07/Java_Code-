@@ -5,7 +5,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class DFS {
+//? Bfs traversal in graph
+
+public class graph_practicle_2 {
 
     public static void main(String[] args) {
         System.out.println ("Enrollment no. = 200130107068");

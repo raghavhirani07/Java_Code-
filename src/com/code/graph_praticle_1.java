@@ -1,7 +1,7 @@
 package com.code;
 import java.util.*;
-    // Bfs Graph Travel
-public class BFS {
+    //? Bfs Graph Travel
+public class graph_praticle_1 {
 
     public  static  void bfs(ArrayList<graph>[] edge ,int total_vertex){
         Queue<Integer> q =new LinkedList<> ();
