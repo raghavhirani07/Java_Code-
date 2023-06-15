@@ -17,17 +17,26 @@ public class graph_practicle_2 {
 
         //* Graph making using graph class
         graph.create_graph (edge,total_vertex);
-        dfs (edge,0,new boolean[total_vertex]);
+        dfs(edge);
     }
 
-    public static void dfs(ArrayList<graph>[] edge, int curr,boolean[] visited) {
+    //* This is Dfs Function Original For one Connected Graph
+    public static void dfsUtils(ArrayList<graph>[] edge, int curr,boolean[] visited) {
         System.out.print (curr+ "  ");
         visited[curr]= true;
         for (int i = 0; i < edge[curr].size () ; i++) {
              graph e = edge[curr].get (i);
              if(!visited[e.des]){
-                 dfs (edge,e.des,visited);
+                 dfsUtils(edge,e.des,visited);
              }
+        }
+    }
+
+    //* This is main Function that Travel all Graph Whatever that are connected or not connected
+    public static void dfs(ArrayList<graph>[] edge ){
+        boolean visited[] = new boolean[edge.length];
+        for (int i = 0; i < edge.length; i++) {
+            dfsUtils (edge,i,visited);
         }
     }
 }

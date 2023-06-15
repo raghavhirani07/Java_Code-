@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import static com.code.graph_practicle_1.bfs;
 
 public class graph_practicle_3 {
     public static boolean haspath(ArrayList<graph>[] g, int src, int des, boolean visited[]) {
