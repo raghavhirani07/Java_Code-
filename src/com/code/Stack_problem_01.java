@@ -1,6 +1,7 @@
 package com.code;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class Stack_problem_01 {
 
@@ -40,22 +41,44 @@ public class Stack_problem_01 {
 
     }
 
-    static class StackB {
-        static class Node {
-            int data;
-            Node next;
+    static class Node {
+        int data;
+        Node next;
 
-            Node(int data) {
-                this.data = data;
-                this.next = null;
-            }
+        Node(int data) {
+            this.data = data;
+            this.next = null;
         }
+    }
+    static class StackB {
 
         static Node head = null;
 
-        public static boolean isEmpty() {
-
+        public  boolean isEmpty() {
             return head == null;
+        }
+        public  Node push(int data){
+            Node temp = new Node (data);
+            temp.next= head;
+            head=temp;
+            return head;
+        }
+        public  boolean pop(){
+            if(isEmpty ()){
+                System.out.println ("no Element has in stack ");
+                return false;
+            }
+            Node head_that_remove = head;
+            head = head.next;
+            System.out.println (head_that_remove.data);
+            return true;
+        }
+        public  int peek(){
+         if(isEmpty ()){
+             return  -1;
+
+         }
+         return head.data;
         }
 
 
@@ -63,16 +86,42 @@ public class Stack_problem_01 {
 
     public static void main(String[] args) {
 
-    // Stack Implementation Using Array , Arraylist ,LinkList
-    StackA list = new StackA ();
-    list.push (5);
-    list.push (7);
-    list.push(45);
+        //* Stack Implementation Using Array , Arraylist ,LinkList
 
-    while (!list.isEmpty ()){
-        System.out.println (list.pop());
-    }
+            //? Using ArrayList
 
+                /*    StackA list = new StackA ();
+
+                    list.push (5);
+                    list.push (7);
+                    list.push(45);
+
+                    while (!list.isEmpty ()){
+                    System.out.println (list.pop());
+                    }
+                 */
+
+            //? Using LinkList
+
+               /*
+                    StackB linkstack = new StackB ();
+                    linkstack.push (45);
+                    linkstack.push (46);
+                    linkstack.push (47);
+
+                    while(!linkstack.isEmpty ()){
+                        System.out.println (linkstack.pop ());
+                    }
+                */
+
+            //? Using FramWork
+
+                 /*   Stack<Integer> stacks = new Stack<Integer> ();
+                    stacks.push (45);
+                    System.out.println (stacks.pop());
+                    System.out.println (stacks.size ());
+
+                  */
 
     }
 }
