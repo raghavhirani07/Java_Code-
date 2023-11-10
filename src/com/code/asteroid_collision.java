@@ -34,7 +34,7 @@ public class asteroid_collision {
             else if (a < 0 && b < 0 ){
                 return true ;
             }
-            return false
+            return false;
         }
 
     public static void main(String[] args) {
